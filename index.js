@@ -10,6 +10,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
+    // origin: "http://localhost:3000",
+    credentials: true,
     methods: ["GET", "POST"],
   },
 });
@@ -18,8 +20,6 @@ const users = new Set();
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
-
-  // console.log(socket.connected);
 
   socket.on("join_room", (data, callBack) => {
     socket.join(data);
