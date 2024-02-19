@@ -10,9 +10,11 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: "*",
-    // origin: "http://localhost:3000",
     credentials: true,
     methods: ["GET", "POST"],
+
+    // if the Railway connection not works switch to ->
+    // origin: "http://localhost:3000",
   },
 });
 
