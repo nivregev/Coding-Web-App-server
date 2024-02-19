@@ -48,3 +48,5 @@ io.on("connection", (socket) => {
 server.listen(3001, () => {
   console.log("SERVER RUNNING");
 });
+
+const socket = io.connect("http://localhost:3001");
